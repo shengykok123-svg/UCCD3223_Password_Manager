@@ -71,6 +71,14 @@ public class AddEditEntryActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (!isFinishing()) {
+            finishAffinity();
+        }
+    }
+
     private void initViews() {
         etTitle = findViewById(R.id.etTitle);
         etUsername = findViewById(R.id.etUsername);
